@@ -6,7 +6,6 @@ start-sleep -s 5
 echo "Remove excess quote marks and the first two lines of the file..."
 $b = Get-Content -Path C:\temp\domaincomputers.txt
 @(ForEach ($a in $b) {$a.Replace('"', '')})[2..($b.length-1)] > C:\temp\domaincomputers.txt
-$b = Get-Content -Path C:\temp\domaincomputers.txt
 echo "Get authorization..."
 $s = get-content C:\temp\domaincomputers.txt
 $c = get-credential domain\username
